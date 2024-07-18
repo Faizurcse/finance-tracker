@@ -1,11 +1,19 @@
 import React, { useEffect } from "react";
 import "./styles.css";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import userSvg from "../../assets/user.svg";
+
+
 function Header() {
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);/*useAuthState: Hook from react-firebase-hooks/auth 
+  for listening to the authentication state changes.
+  user: Extracted from the useAuthState hook. It represents the current 
+  authenticated user if any, otherwise null.
+  */
+
+  
   const navigate = useNavigate();
   function logout() {
     auth.signOut();
@@ -37,8 +45,11 @@ function Header() {
       ) : (
         <></>
       )}
+      
+    
     </div>
   );
+  
 }
 
 export default Header;

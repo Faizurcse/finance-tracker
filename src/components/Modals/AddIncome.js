@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  Card,
-  Col,
-  Row,
   Button,
   Modal,
   Form,
@@ -21,7 +18,7 @@ function AddIncomeModal({
     <Modal
       style={{ fontWeight: 600 }}
       title="Add Income"
-      visible={isIncomeModalVisible}
+      open={isIncomeModalVisible}
       onCancel={handleIncomeCancel}
       footer={null}
     >
@@ -31,6 +28,7 @@ function AddIncomeModal({
         onFinish={(values) => {
           onFinish(values, "income");
           form.resetFields();
+          console.log("values---",values)
         }}
       >
         <Form.Item

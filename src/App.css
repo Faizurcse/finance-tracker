@@ -43,6 +43,16 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+/* outline: none;:
+Removes the default focus outline that browsers add to input elements.
+
+opacity: 1;:
+Sets the opacity of the focused element to 1, making it fully opaque.
+
+transition: all 0.3s;:
+Adds a transition effect that will animate all properties over a duration of 0.3 seconds when they change. 
+*/
+
 .input-wrapper input:focus,
 .custom-input:focus {
   outline: none;

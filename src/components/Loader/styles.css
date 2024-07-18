@@ -1,56 +1,37 @@
-.wrapper {
-  background-color: #fff;
-  position: fixed;
-  width: 100vw;
-  height: 90vh;
+/* Loader.css */
+.loader-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+
+
+  /* position: fixed;: This fixes the loader wrapper in the viewport, so it stays in place even if the page is scrolled.
+top: 0;: This aligns the loader wrapper to the top of the viewport.
+left: 0;: This aligns the loader wrapper to the left of the viewport.
+z-index: 9999;: This places the loader wrapper above other content on the page. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
-.lds-ripple {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-ripple div {
-  position: absolute;
-  border: 4px solid var(--theme);
-  opacity: 1;
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
   border-radius: 50%;
-  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  width: 120px;
+  height: 120px;
+  /* This applies the spin animation to the loader, making it rotate continuously. */
+  animation: spin 2s linear infinite;
 }
-.lds-ripple div:nth-child(2) {
-  animation-delay: -0.5s;
-}
-@keyframes lds-ripple {
-  0% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  4.9% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  5% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: 72px;
-    height: 72px;
-    opacity: 0;
-  }
+
+
+/* 0% { transform: rotate(0deg); }: This sets the initial state of the animation, with no rotation.
+100% { transform: rotate(360deg); }: This sets the final state of the animation, with a full rotation (360 degrees). */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

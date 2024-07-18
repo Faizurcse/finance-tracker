@@ -14,15 +14,20 @@ function Cards({
     <Row
       style={{
         display: "flex",
-        flexWrap: "wrap",
-        gap: "16px",
+        flexWrap: "wrap",// The default value is nowrap, which keeps the items in a single line. Setting it to wrap allows the items to wrap onto multiple lines when necessary.
+        gap: "16px",//shorthand for setting both row-gap and column-gap
         justifyContent: "space-between",
       }}
     >
-      <Card bordered={true} style={cardStyle}>
+      {/* >>bordered={true} enables the border around the card. By default, a card may 
+      not have a border, and setting this property to true ensures that a border is displayed.
+
+          >>style={cardStyle}This property applies custom CSS styles to the Card component.
+       */}
+      <Card bordered={true}  style={cardStyle}>
         <h2>Current Balance</h2>
         <p>₹{currentBalance}</p>
-        <div class="btn btn-blue" style={{ margin: 0 }} onClick={reset}>
+        <div className="btn btn-blue" style={{ margin: 0 }} onClick={reset}>
           Reset Balance
         </div>
       </Card>
@@ -31,7 +36,7 @@ function Cards({
         <h2>Total Income</h2>
         <p>₹{income}</p>
         <div
-          class="btn btn-blue"
+          className="btn btn-blue"
           style={{ margin: 0 }}
           onClick={showIncomeModal}
         >

@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  Card,
-  Col,
-  Row,
   Button,
   Modal,
   Form,
@@ -10,26 +7,27 @@ import {
   DatePicker,
   Select,
 } from "antd";
+
 function AddExpenseModal({
   isExpenseModalVisible,
   handleExpenseCancel,
   onFinish,
 }) {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm();  
   return (
     <Modal
       style={{ fontWeight: 600 }}
       title="Add Expense"
-      visible={isExpenseModalVisible}
+      open={isExpenseModalVisible}
       onCancel={handleExpenseCancel}
       footer={null}
     >
       <Form
         form={form}
         layout="vertical"
-        onFinish={(values) => {
+        onFinish={(values) => { // onFinish trigger when the form fill and submit onFinish in Ant Design's Form component: A predefined event handler that is triggered upon successful form submission.----------
           onFinish(values, "expense");
-          form.resetFields();
+           form.resetFields();
         }}
       >
         <Form.Item

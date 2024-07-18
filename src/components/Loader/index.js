@@ -1,14 +1,13 @@
-import React from "react";
-import "./styles.css";
-function Loader() {
+// Loader.js
+import React from 'react';
+import './styles.css';
+
+const Loader = () => {
   return (
-    <div className="wrapper">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
-      </div>
+    <div className="loader-wrapper">
+      <div className="loader"></div>
     </div>
   );
-}
+};
 
 export default Loader;
